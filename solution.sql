@@ -21,6 +21,12 @@ LEFT JOIN
 GROUP BY
     c.name;
 
+-- 4️⃣ Calculate the total revenue generated from book sales.
+SELECT SUM(b.price * o.quantity) AS total_revenue
+FROM orders o
+JOIN books b ON o.book_id = b.id;
+
 
 
 SELECT * FROM orders;
+SELECT * FROM books;
