@@ -26,6 +26,13 @@ SELECT SUM(b.price * o.quantity) AS total_revenue
 FROM orders o
 JOIN books b ON o.book_id = b.id;
 
+-- 6️⃣ Find the average price of books in the store.
+SELECT ROUND(AVG(price), 2) AS avg_book_price
+FROM books;
+
+
+
+
 
 
 SELECT * FROM orders;
