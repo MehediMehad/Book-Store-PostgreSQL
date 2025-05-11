@@ -26,10 +26,23 @@ SELECT SUM(b.price * o.quantity) AS total_revenue
 FROM orders o
 JOIN books b ON o.book_id = b.id;
 
+-- 5️⃣ List all customers who have placed more than one order.
+SELECT 
+    c.name,
+    COUNT(o.id) AS orders_count
+FROM 
+    customers c
+JOIN 
+    orders o ON c.id = o.customer_id
+GROUP BY 
+    c.id, c.name
+HAVING 
+    COUNT(o.id) > 1
+
+
 -- 6️⃣ Find the average price of books in the store.
 SELECT ROUND(AVG(price), 2) AS avg_book_price
 FROM books;
-
 
 
 
